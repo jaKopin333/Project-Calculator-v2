@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0.3turn 30% 60% / 0.7);
+}
+
+#calculator {
+  font-family: "Roboto", sans-serif;
+    background-color: hsl(0, 0%, 25%);
+  font-weight: 900;
+  font-style: normal;
+}

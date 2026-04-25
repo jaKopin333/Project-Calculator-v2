@@ -3,17 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is my calculator</title>
+    <title>Cat Calculator 🐱 </title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fonts below -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lekton:ital,wght@0,400;0,700;1,400&family=Manrope:wght@200..800&family=Noto+Sans+Mono:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <!--Main functions -->
     <div id="calculator">
         <input id="display" readonly>
         <div id="calButtons">
         </div>
     </div>
 
-    <script src="main.js"></script>
+    <!--History sidebar-->
+    <div id="historySidebar" class="historySidebar">
+        <div class="history-header">
+            <h3>History</h3>
+            <button id="closeHistory" class="closeBtn">x</button>
+        </div>
+        <div id="historyList" class="historyList">
+            <!-- History items appear here -->
+             <div class="historyPlaceholder">No calculations yet!</div>
+        </div>
+        <button id="clearHistory" class="clearHistoryBtn">Clear History</button>
+    </div>
+
+    <!-- Theme Toggle & History Toogle -->
+     <div class="top-controls">
+        <button id="historyToggle" class="controlBtn" aria-label="View History">
+            <span class="toggleIcon">📃</span>
+        </button>
+        <button id="themeToggle" class="controlBtn" aria-activedescendant="Toggle Theme">
+            <span class="toggleIcon">🌙</span>
+        </button>
+     </div>
+
+     <div class="calculatorBody">
+        <!-- Cat Ears-->
+         <div class="catEars">
+            <div class="earLeft"></div>
+            <div class="earRight"></div>
+         </div>
+     </div>
+
+    
+    
+    
+    
+    
+        <script src="main.js"></script>
     
 </body>
 </html>
