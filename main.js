@@ -1,6 +1,12 @@
 // Select the containers
-const btnContainer = document.getElementById('calButtons');
 const display = document.getElementById('display');
+const btnContainer = document.getElementById('calButtons');
+const historySidebar = document.getElementById('historySidebar');
+const clearHistory = document.getElementById('clearHistory');
+const closeHistory = document.getElementById('closeHistory');
+const historyToggle = document.getElementById('historyToggle');
+const themeToggle = document.getElementById('themeToggle');
+
 
 // This is how you'll pull and add vaules and ops
 let num1 = '';
@@ -49,8 +55,31 @@ btnValues.forEach(value => {
         if (operator === '/') return Number(num1) / Number(num2);
     }
 
-    // set button class
+    // Set button class
     button.className = 'calButtons';
+
     // Append button to container
     btnContainer.appendChild(button); 
 });
+
+
+// UI Toggles
+// Toggling history
+    historyToggle.addEventListener("click", () => {
+        historySidebar.classList.add("show");
+    });
+
+    // Toggling close history bar
+    clearHistory.addEventListener("click", () => {
+        historySidebar.classList.remove("show");
+    });
+
+    // Toggling Dark Mode
+    themeToggle.addEventListener("click", () => {
+        document.body.classList.toggle("darkmode");
+    });
+
+    // Close history menu
+    closeHistory.addEventListener("click", () => {
+        historySidebar.classList.remove("close");
+    });

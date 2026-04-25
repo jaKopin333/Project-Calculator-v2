@@ -1,15 +1,51 @@
+:root {
+    --base-color: white;
+    --base-variant: #e8e9ed;
+    --text-color: #111528;
+    --secondary-text: #232738;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+}
+
+body.darkmode{
+   --base-color: #070b1d;
+    --base-variant: #101425;
+    --text-color: #ffffff;
+    --secondary-text: #a4a5b8;
+    --primary-color: #3a435d;
+    --accent-color: #0071ff;
+}
+
 body {
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: hsl(0.3turn 30% 60% / 0.7);
+    background: var(--base-color);
+    color: var(--text-color);
 }
 
 #calculator {
   font-family: "Roboto", sans-serif;
-    background-color: hsl(0, 0%, 25%);
+  background: var(--base-variant);
+  color: var(--text-color);
+  border-radius: 15px;
+  max-width: 500px;
+  overflow: hidden;
   font-weight: 900;
   font-style: normal;
+}
+
+.historySidebar {
+  position: fixed;
+  left: -300px; /* Hidden off screen */
+  top: 0;
+  width: 300px;
+  height: 100%;
+  transition: right 0.3s ease;
+}
+
+.historySidebar.show {
+  left: 0; /* Should slide into view */
 }

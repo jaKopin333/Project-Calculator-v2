@@ -12,19 +12,29 @@
 </head>
 <body>
 
-    <!--Main functions -->
+    <!--Main functions & Styling -->
     <div id="calculator">
-        <input id="display" readonly>
-        <div id="calButtons">
-        </div>
+    
+        <!-- Cat Ears-->
+         <div class="catEars">
+            <div class="earLeft"></div>
+            <div class="earRight"></div>
+         </div>
+     </div>
+
+     <!--display results & functional buttons-->   
+
+     <input id="display" readonly>
+       <div id="calButtons"></div>
     </div>
 
     <!--History sidebar-->
     <div id="historySidebar" class="historySidebar">
         <div class="history-header">
             <h3>History</h3>
-            <button id="closeHistory" class="closeBtn">x</button>
+            <button id="closeHistory" class="closeBtn">⤬</button>
         </div>
+
         <div id="historyList" class="historyList">
             <!-- History items appear here -->
              <div class="historyPlaceholder">No calculations yet!</div>
@@ -37,25 +47,13 @@
         <button id="historyToggle" class="controlBtn" aria-label="View History">
             <span class="toggleIcon">📃</span>
         </button>
-        <button id="themeToggle" class="controlBtn" aria-activedescendant="Toggle Theme">
+
+        <button id="themeToggle" class="controlBtn" aria-label="Toggle Theme">
             <span class="toggleIcon">🌙</span>
         </button>
      </div>
 
-     <div class="calculatorBody">
-        <!-- Cat Ears-->
-         <div class="catEars">
-            <div class="earLeft"></div>
-            <div class="earRight"></div>
-         </div>
-     </div>
-
-    
-    
-    
-    
-    
-        <script src="main.js"></script>
+    <script src="main.js"></script>
     
 </body>
 </html>
