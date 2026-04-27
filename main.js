@@ -6,6 +6,8 @@ const clearHistory = document.getElementById('clearHistory');
 const closeHistory = document.getElementById('closeHistory');
 const historyToggle = document.getElementById('historyToggle');
 const themeToggle = document.getElementById('themeToggle');
+const historyList = document.getElementById('historyList');
+const historyPlaceholder = document.getElementById('historyPlaceholder');
 
 
 // This is how you'll pull and add vaules and ops
@@ -29,7 +31,21 @@ btnValues.forEach(value => {
     button.addEventListener('click', () => {
         if (value === '=') {
             let result = operate(num1, operator, num2);
+            // This removes the message in the sidebar once an input is made
+            const placeholder = document.querySelector(".historyPlaceholder");
+            if (placeholder) {
+                placeholder.remove();
+            }
+            // Display history items
+            const historyItems = document.createElement("div");
+            historyItems.textContent = `${num1} ${operator} ${num2} = ${result}`;
+            historyList.appendChild(historyItems);
+
             display.value = result;
+            
+            num1 = '';
+            operator = '';
+            num2 = '';
         } else if (value === 'C') {
             num1 = '';
             operator = '';
@@ -47,39 +63,40 @@ btnValues.forEach(value => {
         display.value += value;
         }
     });
-    // Create a function for adding ops and num2 together
-    function operate(num1, operator, num2) {
-        if (operator === '+') return Number(num1) + Number(num2);
-        if (operator === '-') return Number(num1) - Number(num2);
-        if (operator === '*') return Number(num1) * Number(num2);
-        if (operator === '/') return Number(num1) / Number(num2);
-    }
 
     // Set button class
-    button.className = 'calButtons';
+    button.className = 'calcBtn';
 
     // Append button to container
     btnContainer.appendChild(button); 
 });
 
+// Create a function for adding ops and num2 together
+    function operate(num1, operator, num2) {
+        if (operator === '+') return Number(num1) + Number(num2);
+        if (operator === '-') return Number(num1) - Number(num2);
+        if (operator === '*') return Number(num1) * Number(num2);
+        if (operator === '/') return Number(num1) / Number(num2);
+    };
+
 
 // UI Toggles
-// Toggling history
-    historyToggle.addEventListener("click", () => {
-        historySidebar.classList.add("show");
-    });
+// Open history sidebar
+historyToggle.addEventListener("click", () => {
+    historySidebar.classList.add("show");
+});
 
-    // Toggling close history bar
-    clearHistory.addEventListener("click", () => {
-        historySidebar.classList.remove("show");
-    });
+// Close history sidebar
+closeHistory.addEventListener("click", () => {
+    historySidebar.classList.remove("show");
+});
 
-    // Toggling Dark Mode
-    themeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("darkmode");
-    });
+// Clear history later
+clearHistory.addEventListener("click", () => {
+historyList.innerHTML = '<div class="historyPlaceholder">No calculations yet!</div>';
+});
 
-    // Close history menu
-    closeHistory.addEventListener("click", () => {
-        historySidebar.classList.remove("close");
-    });
+// Toggle dark mode
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("darkmode");
+});
