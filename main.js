@@ -17,9 +17,12 @@ let num2 = '';
 
 
 // Define button vaules
-const btnValues = ['7', '8', '9', '4', '5',
-    '6', '1', '2', '3', '+', '0', '.',
-    '-', '*', '/', '=', 'C'
+const btnValues = [
+  'C', '/', '*', '-',
+  '7', '8', '9', '+',
+  '4', '5', '6', '=',
+  '1', '2', '3',
+  '0', '.'
 ];
 
 // Create and append buttons this is where the loop starts!
